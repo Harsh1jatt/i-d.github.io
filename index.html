@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number ic and dc</title>
+
+    <style>
+        .workarea {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* text-align: center; */
+        }
+
+        button {
+            height: 100px;
+            width: 100px;
+            padding: 10px;
+            font-size: 50px;
+            color: blue;
+            background-color: aqua;
+            border: 2px solid blue;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: blue;
+            border: aqua;
+            color: aqua;
+
+        }
+
+        #value {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            padding: 10px, 5px;
+            font-size: 50px;
+            border: 10px solid rgb(61, 58, 58);
+            border-radius: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="workarea">
+            <button class="minus" id="dec">-</button>
+            <div id="value">0</div>
+            <button class="plus" id="inc">+</button>
+        </div>
+    </div>
+
+    <script>
+        const inc = document.getElementById("inc");
+        const dec = document.getElementById("dec");
+        const value = document.getElementById("value");
+
+        var count = 0;
+        value.innerHTML = count;
+
+        const increment = () => {
+            count++;
+            value.innerHTML = count;
+        }
+        const decrement = () => {
+            count--;
+            if (count < 0) {
+                count = 0;
+                value.innerHTML = count;
+            }
+            value.innerHTML = count;
+        }
+
+
+        inc.addEventListener("click", increment);
+        dec.addEventListener("click", decrement);
+
+    </script>
+</body>
+
+</html>
